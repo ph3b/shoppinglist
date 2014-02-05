@@ -58,6 +58,33 @@ body {
 .marketing p + h4 {
   margin-top: 28px;
 }
+.formin {
+  margin-top: -15px;
+  margin-left:auto;
+  margin-right:auto;
+  width:270px;
+}
+.list-group{
+  margin-top:80px;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) { 
+  .formin {
+    margin-left:10%;
+    margin-top:10px;
+  } 
+  .list-group{
+  margin-top:53px;
+  }
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) { 
+  .formin {
+    margin-left:10%;
+    margin-top:10px;
+  } 
+  .list-group{
+  margin-top:53px;
+  } 
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -67,6 +94,11 @@ body {
   .footer {
     padding-left: 0;
     padding-right: 0;
+  }
+  .form {
+    width: 300px;
+    margin-left: 35%;
+    margin-right:auto;
   }
   /* Space out the masthead */
   .header {
