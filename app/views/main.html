@@ -1,31 +1,38 @@
 <div class="header">
-  <h3 class="text-muted" style="text-align:center;margin-top:-15px">Handleliste</h3>
-  <h3 class="text-muted" ng-hide="getLength == 0" style="text-align:center;margin-top:-22px;color:#e50005">{{getLength}} ♥</h3>
-  <h5 class="text-muted" style="text-align:center;margin-top:-10px">Rebekka og Mathias</h5>
+    <h3 class="text-muted" style="text-align:center;margin-top:-15px">Handleliste</h3>
+
+    <h3 class="text-muted" ng-hide="getLength == 0" style="text-align:center;margin-top:-22px;color:#e50005">
+        {{getLength}} ♥</h3>
+    <h5 class="text-muted" style="text-align:center;margin-top:-10px">Rebekka og Mathias</h5>
 </div>
-
-
 <div class="formin">
-  <input type="text" ng-keydown="hitEnter($event)" ng-model="item" class="form-control" style='width: 150px; float: left;' placeholder='{{placeHolder}}' maxlength="14">
-  <button data-ng-click="addFood(item)" ng-hide="showSave"class="btn btn-info" style='float:left; margin-left:10px;'>Legg til</button>
-  <button data-ng-click="saveFood()" ng-show="showSave" class="btn btn-info" style='float:left; margin-left:10px;'>Lagre</button>
+    <input type="text" ng-keydown="hitEnter($event)" ng-model="item" class="form-control"
+           style='width: 150px; float: left;' placeholder='{{placeHolder}}' maxlength="14">
+    <button data-ng-click="addFood(item)" ng-hide="showSave" class="btn btn-info" style='float:left; margin-left:10px;'>
+        Legg til
+    </button>
+    <button data-ng-click="saveFood()" ng-show="showSave" class="btn btn-info" style='float:left; margin-left:10px;'>
+        Lagre
+    </button>
 </div>
 <div class="list-group">
     <a class="list-group-item" data-ng-repeat='food in todoList' style="height:60px">
-      <div style="float:left;">
-        <button style="width:58px;margin-left:-10px;text-align:center" type="button" class="btn btn-info" ng-show="food.isChecked == false" ng-click="checkItem(food.id)"><span>Kjøpt</span></button>
-        <button style=";margin-left:-10px;width:58px" type="button" class="btn btn-success" ng-show="food.isChecked == true" ng-click="checkItem(food.id)"><span>✔</span></button>
-      </div>
-      
-      <div style="margin-left:70px;margin-top:10px;">{{food.matvare}}</div>
+        <div style="float:left;">
+            <button style="width:58px;margin-left:-10px;text-align:center" type="button" class="btn btn-info"
+                    ng-show="food.isChecked == false" ng-click="checkItem(food.id)"><span>Kjøpt</span></button>
+            <button style=";margin-left:-10px;width:58px" type="button" class="btn btn-success"
+                    ng-show="food.isChecked == true" ng-click="checkItem(food.id)"><span>✔</span></button>
+        </div>
+
+        <div style="margin-left:70px;margin-top:10px;">{{food.matvare}}</div>
         <!-- {{food.id}} -->
         <div style="float:right;margin-top:-30px;">
-          <button type="button" class="btn btn-primary" ng-click="editFood(food.id)">
-            <span class="glyphicon glyphicon-edit"></span>
-          </button>
-          <button type="button" class="btn btn-danger" ng-click="deleteFood(food.id)">
-            <span class="glyphicon glyphicon-ban-circle"></span>
-          </button>   
+            <button type="button" class="btn btn-primary" ng-click="editFood(food.id)">
+                <span class="glyphicon glyphicon-edit"></span>
+            </button>
+            <button type="button" class="btn btn-danger" ng-click="deleteFood(food.id)">
+                <span class="glyphicon glyphicon-ban-circle"></span>
+            </button>
         </div>
     </a>
 </div>
