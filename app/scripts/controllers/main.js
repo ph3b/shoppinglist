@@ -73,15 +73,22 @@ angular.module('shoppinglistApp')
             }
             $scope.itemPath.$save("isChecked");
         }
+       /* Arkiv-funksjon som flytter todo til todo/archive
+           $scope.addToArchive = function(){
+            $scope.itemPath = $firebase(new Firebase("https://xlib.firebaseio.com/todo/" + id));
+            if ($scope.todoList[id].archived == false) {
+                $scope.itemPath.archived = true;
+            }
+            $scope.itemPath.$save("archived");
+        }*/
         //Lytter på write-to backend og setter id-attr = parent index for å lettere hente ut entries
         $scope.todoList.$on('loaded', function () { //Genialt!!!!
             $scope.todoList.$on('child_added', function (val) {
                 $scope.itemPath = $firebase(new Firebase("https://xlib.firebaseio.com/todo/" + val.snapshot.name));
                 $scope.itemPath.id = val.snapshot.name;
-                if(val.snapshot.value.matvare != undefined && val.snapshot.value.matvare != ""){
+                if (val.snapshot.value.matvare != undefined && val.snapshot.value.matvare != "") {//Må bruke snapshot value her.
                     $scope.itemPath.$save("id");
                 }
-
             });
         });
         //Lytter på todoList-objektet og holde getLength oppdatert

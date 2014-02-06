@@ -13,6 +13,10 @@ angular.module('shoppinglistApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/ferdig', {
+        templateUrl: 'views/ferdig.html',
+        controller: 'FerdigCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
