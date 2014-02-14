@@ -1,1 +1,18 @@
-<p>This is the ferdig view.</p>
+<div class="list-group">
+    <a class="list-group-item" data-ng-repeat='food in arkivList' style="height:60px">
+        <div style="float:left;">
+            <button style="margin-left:-10px;width:58px" type="button" class="btn btn-success"><span>✔</span></button>
+        </div>
+        <div style="margin-left:70px;margin-top:10px;">{{food.matvare}}</div>
+        <div style="float:right;margin-top:-30px;">
+        </div>
+    </a>
+</div>
+<a href="/#/">
+    <button type="button" class="btn btn-danger">
+        Til handleliste
+    </button>
+</a>
+<button data-ng-click="emptyArchive()" type="button" class="btn btn-info">
+    Tøm arkiv
+</button>
